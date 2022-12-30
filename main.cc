@@ -1,13 +1,9 @@
+#include "fmt/format.h"
+#include "fmt/color.h"
 #include <iostream>
-#include <map>
-#include <string>
-#include <unordered_map>
-#include <vector>
-using namespace std;
-
 int main() {
-    unordered_map<string, vector<string>> mp;
-    mp["seulf"] = {"12", "23"};
-    cout << mp["seulf"][0] << endl;
+    fmt::print(fg(fmt::color::crimson) | fmt::emphasis::bold,"Hello, {}!\n", "world");
+    std::string s = fmt::format("{} is {}", "abra", 12);
+    std::cout << s << std::endl;
     return 0;
 }
